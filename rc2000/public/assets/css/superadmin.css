@@ -1,0 +1,168 @@
+/* assets/css/superadmin.css - Super Admin portal: dark sidebar, login, dashboard widgets.
+   Loaded AFTER base/layout/components so it can restyle the shared admin shell. */
+
+/* ---------- Dark sidebar ---------- */
+.superadmin-body .sidebar {
+    background: var(--color-ink);
+    border-right: 0;
+}
+.superadmin-body .sidebar-brand { color: var(--color-white); }
+.superadmin-body .nav-link { color: #e9ecf1; }
+.superadmin-body .nav-link:hover { background: rgba(255, 255, 255, .08); }
+.superadmin-body .nav-link.is-active { background: var(--color-cream); color: var(--color-ink); font-weight: 500; }
+.superadmin-body .sidebar-footer { border-top-color: rgba(255, 255, 255, .28); }
+.superadmin-body .sidebar-user { color: var(--color-white); }
+.superadmin-body .sidebar-footer .link-button { color: #c4cad4; }
+
+/* ---------- Activity badges (audit log + dashboard) ---------- */
+.badge-act-created                                  { background: var(--badge-neutral-bg); color: var(--badge-neutral-fg); }
+.badge-act-edited, .badge-act-deactivated           { background: var(--badge-pending-bg); color: var(--badge-pending-fg); }
+.badge-act-approved, .badge-act-verified, .badge-act-reactivated,
+.badge-act-published, .badge-act-resolved           { background: var(--badge-good-bg); color: var(--badge-good-fg); }
+.badge-act-rejected, .badge-act-deleted,
+.badge-act-not-verified                             { background: var(--badge-bad-bg); color: var(--badge-bad-fg); }
+.badge-act-archived, .badge-act-closed,
+.badge-act-signed-in, .badge-act-signed-out         { background: #e3e6ea; color: #4d5a68; }
+
+/* ---------- Dashboard layout ---------- */
+.sa-dash-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 270px;
+    gap: 14px;
+    align-items: start;
+}
+.sa-dash-main .panel { margin-bottom: 14px; }
+.sa-small { font-size: 11px; }
+
+.sa-bar-row { display: grid; grid-template-columns: 80px 1fr 28px; align-items: center; gap: 10px; margin-bottom: 10px; font-size: 12px; }
+.sa-bar-row:last-child { margin-bottom: 0; }
+.sa-bar-track { height: 9px; background: #e8ebef; border-radius: 99px; overflow: hidden; }
+.sa-bar-fill  { display: block; height: 100%; background: var(--color-navy); border-radius: 99px; min-width: 0; }
+.sa-bar-count { text-align: right; font-weight: 500; }
+
+.sa-account-list { list-style: none; margin: 0; padding: 0; }
+.sa-account-list li {
+    display: flex; align-items: center; justify-content: space-between; gap: 8px;
+    padding: 11px 16px;
+    border-top: 1px solid var(--color-border);
+}
+.sa-account-name { font-size: 12px; font-weight: 500; }
+.sa-account-meta { font-size: 10px; color: var(--color-muted); }
+
+/* Account status chips (also used by Admin Management) */
+.acct-chip {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 3px 10px; border-radius: 99px;
+    font-size: 11px; font-weight: 500; white-space: nowrap;
+}
+.acct-chip::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.acct-active      { background: var(--badge-good-bg); color: var(--badge-good-fg); }
+.acct-deactivated { background: #fff5e6; color: #b9803a; border: 1px solid #f0cf9b; }
+.acct-deactivated::before { background: transparent; border: 1.5px solid currentColor; width: 5px; height: 5px; }
+
+/* ---------- Login page (same 50/50 split and sizes as the Admin portal) ---------- */
+.sa-login-body { background: var(--color-cream); }
+.sa-login-page { display: grid; grid-template-columns: 1fr 1fr; min-height: 100vh; }
+
+.sa-login-welcome {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 48px 9%;
+    background: var(--color-ink);
+    color: var(--color-white);
+}
+.sa-login-welcome h1 { color: var(--color-white); font-size: 48px; line-height: 1.15; margin-bottom: 14px; }
+.sa-login-welcome p  { margin: 0; font-size: 16px; color: #d6dae1; }
+
+.sa-login-panel { display: flex; align-items: center; justify-content: center; padding: 40px 32px; }
+.sa-login-box { width: 100%; max-width: 404px; }
+.sa-login-brand {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 28px;
+    font: 600 20px var(--font-heading); color: var(--color-navy);
+}
+.sa-login-brand img { width: 40px; height: 40px; }
+.sa-login-title { text-align: center; font-size: 36px; margin-bottom: 30px; }
+.sa-label { display: block; margin: 0 0 8px; font-size: 13px; color: var(--color-navy); }
+.sa-input { margin-bottom: 20px; padding: 14px 16px; font-size: 15px; background: var(--color-ink); border-color: var(--color-ink); color: var(--color-white); }
+.sa-input::placeholder { color: #aab2bf; }
+.sa-input:focus { outline: 2px solid rgba(122, 0, 25, .35); border-color: var(--color-maroon); }
+.sa-forgot { margin: -8px 0 24px; text-align: right; font-size: 13px; }
+.sa-forgot a { color: var(--color-navy); }
+.sa-login-box .btn-block { padding: 15px 18px; font-size: 16px; }
+.sa-footnote { margin: 18px 0 0; text-align: center; font-size: 13px; color: var(--color-muted); }
+.sa-login-box .login-notice { margin: 0 0 18px; padding: 10px 12px; font-size: 13px; color: #25496f; background: #e4ecf4; border-radius: var(--radius); }
+.sa-login-box .flash { font-size: 14px; }
+
+@media (max-width: 1000px) {
+    .sa-dash-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 800px) {
+    .sa-login-page { grid-template-columns: 1fr; }
+    .sa-login-welcome { padding: 32px 24px; }
+    .sa-login-welcome h1 { font-size: 34px; }
+}
+
+/* ---------- Admin management ---------- */
+.sa-page-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+.btn-sm { padding: 5px 14px; font-size: 12px; }
+.btn-amber { background: #f0c56d; color: #4a3410; }
+.btn-amber:hover { background: #e6b556; }
+.data-table tr.is-deactivated { background: #fbf1de; }
+.sa-crumbs { margin-bottom: 8px; font-size: 12px; color: var(--color-muted); }
+.sa-crumbs a { color: var(--color-maroon); }
+
+.sa-card { background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--radius); margin-bottom: 14px; }
+.sa-card-body { padding: 18px 20px; }
+.sa-card-title { font-size: 18px; margin-bottom: 2px; }
+.sa-card-sub { margin: 0 0 14px; font-size: 12px; color: var(--color-muted); }
+.sa-card-foot {
+    display: flex; justify-content: flex-end; gap: 10px;
+    padding: 14px 20px; background: var(--color-cream);
+    border-top: 1px solid var(--color-border);
+    border-radius: 0 0 var(--radius) var(--radius);
+}
+.sa-form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 18px; margin: 14px 0; }
+.sa-label-b { display: block; margin: 0 0 6px; font-size: 11px; font-weight: 600; color: var(--color-navy); }
+.input-readonly { background: #f7efd9; color: #7d6a3c; cursor: default; }
+.field-error { margin: 4px 0 0; font-size: 11px; color: var(--color-red); }
+.sa-radios { border: 0; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; font-size: 12px; min-width: 0; }
+.sa-radios legend { padding: 0; margin-bottom: 2px; }
+.sa-radios label { display: flex; gap: 8px; align-items: center; }
+
+.sa-account-head { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; }
+.sa-account-title { font-size: 20px; }
+.sa-account-sub { margin: 2px 0 0; font-size: 12px; color: var(--color-muted); }
+
+.sa-manage-grid { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 14px; align-items: start; }
+.sa-manage-nav { padding: 12px 0; }
+.sa-manage-kicker { margin: 0 14px 8px; font-size: 10px; letter-spacing: .06em; color: var(--color-muted); }
+.sa-manage-nav a { display: block; padding: 10px 14px; font-size: 13px; color: var(--color-navy); border-left: 3px solid transparent; }
+.sa-manage-nav a:hover { background: var(--color-cream); text-decoration: none; }
+.sa-manage-nav a.is-active { background: #f7efd9; border-left-color: var(--color-maroon); }
+
+.sa-linkbox { padding: 12px 14px; margin-bottom: 14px; background: #f7efd9; border-radius: var(--radius); font-size: 12px; color: var(--color-muted); }
+.sa-linkbox strong { color: #4b7aa8; font-weight: 500; }
+.sa-check { display: flex; gap: 8px; align-items: center; font-size: 12px; margin-bottom: 8px; }
+
+.sa-danger { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 14px 16px; margin-bottom: 14px; border: 1px solid var(--color-border); border-radius: var(--radius); font-size: 12px; }
+.sa-danger p { margin: 2px 0 0; color: var(--color-muted); }
+.sa-danger-warn { border-top: 3px solid #f0c56d; }
+.sa-danger-red  { border-top: 3px solid var(--color-red); }
+.sa-danger-red strong { color: var(--color-red); }
+
+.sa-secret { padding: 14px 18px; margin-bottom: 14px; background: #fdf0d8; border: 1px solid #ecd09a; border-radius: var(--radius); }
+.sa-secret h2 { font-size: 15px; margin-bottom: 4px; }
+.sa-secret p { font-size: 12px; margin-bottom: 8px; color: #6b4a12; }
+.sa-secret-row { display: flex; gap: 8px; }
+.sa-secret-row .input { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 12px; }
+
+#remove-dialog form { display: flex; flex-direction: column; gap: 12px; }
+#remove-dialog .dialog-foot { display: flex; justify-content: flex-end; gap: 8px; }
+
+@media (max-width: 800px) {
+    .sa-form-grid, .sa-manage-grid { grid-template-columns: 1fr; }
+    .sa-danger { flex-direction: column; align-items: flex-start; }
+}
+
+/* ---------- Audit logs ---------- */
+.audit-filters .select { width: auto; min-width: 130px; }
+.audit-table .audit-detail { color: var(--color-maroon); }

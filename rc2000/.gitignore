@@ -1,0 +1,2 @@
+# Admin portal local configuration may contain database credentials.
+config/portal/local.php

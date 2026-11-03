@@ -1,0 +1,44 @@
+/* Donation page */
+body:has(.donate-layout) .donate-layout { grid-template-columns: 220px minmax(0, 1fr); min-height: 70vh; }
+body:has(.donate-layout) .donate-side {
+  margin: 18px 0 18px 18px;
+  min-height: 0;
+  padding: 12px 10px;
+  gap: 3px;
+  align-content: start;
+  background: var(--red);
+  border-radius: 4px;
+}
+body:has(.donate-layout) .donate-side .eyebrow { margin: 0; font-size: .7rem; }
+body:has(.donate-layout) .donate-side a { padding: 9px 10px; font-size: .86rem; }
+body:has(.donate-layout) .donate-side a.is-active,
+body:has(.donate-layout) .donate-side a:hover { background: var(--paper); color: var(--red); }
+body:has(.donate-layout) .donate-main { min-width: 0; padding: 28px clamp(20px, 4vw, 52px); }
+body:has(.donate-layout) .howto,
+body:has(.donate-layout) .form-card { width: min(100%, 960px); margin-left: auto; margin-right: auto; }
+body:has(.donate-layout) .howto { background: var(--white); border: 1px solid var(--line); border-left: 3px solid var(--gold); padding: 16px 20px; }
+body:has(.donate-layout) .form-card { padding: 24px; box-shadow: none; }
+body:has(.donate-layout) .form-card.framed { border: 1px solid #8bb8ca; background: #dcebf1; }
+body:has(.donate-layout) form { gap: 16px; }
+body:has(.donate-layout) .form-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+body:has(.donate-layout) .form-card label { min-width: 0; }
+body:has(.donate-layout) .form-card input:not([type="checkbox"]):not([type="file"]),
+body:has(.donate-layout) .form-card select { min-width: 0; height: 44px; padding: 10px 12px; }
+body:has(.donate-layout) .form-card textarea { min-height: 104px; padding: 10px 12px; }
+body:has(.donate-layout) .form-card input[type="checkbox"] { width: auto; }
+body:has(.donate-layout) .upload-box { padding: 18px; }
+body:has(.donate-layout) .upload-box input[type="file"] { display: block; max-width: 100%; margin: 8px auto 0; }
+body:has(.donate-layout) .field-note { color: var(--muted, #667085); font-size: .76rem; font-weight: 400; line-height: 1.4; }
+body:has(.donate-layout) .payment-date-label > span { display: inline-flex; align-items: center; gap: 7px; margin-bottom: 5px; }
+body:has(.donate-layout) .payment-date-label img { display: block; width: 18px; height: 18px; object-fit: contain; }
+
+@media (max-width: 700px) {
+  body:has(.donate-layout) .donate-layout { grid-template-columns: minmax(0, 1fr); }
+  body:has(.donate-layout) .donate-side { margin: 12px 16px 0; }
+  body:has(.donate-layout) .donate-main { padding: 16px; }
+}
+
+@media (max-width: 560px) {
+  body:has(.donate-layout) .form-card { padding: 18px; }
+  body:has(.donate-layout) .form-grid { grid-template-columns: minmax(0, 1fr); }
+}

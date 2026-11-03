@@ -1,0 +1,8 @@
+# Uploaded files may be viewed (public gallery/story images) but never executed
+Options -Indexes
+<FilesMatch "\.(php|phtml|phar|php[0-9]|pl|py|cgi|sh|html?|svg)$">
+    Require all denied
+</FilesMatch>
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+</IfModule>

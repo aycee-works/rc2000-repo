@@ -1,0 +1,2 @@
+# Public endpoints only answer JSON; block directory listing
+Options -Indexes

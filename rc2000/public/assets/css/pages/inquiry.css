@@ -1,0 +1,30 @@
+/* Request and concern ticket forms */
+body:has(.inquiry-page) { background: var(--paper); }
+body:has(.inquiry-page) .inquiry-page { width: min(100%, 1240px); min-height: calc(100vh - 56px); margin: 0 auto; padding: clamp(28px, 4vw, 48px) clamp(22px, 4vw, 42px); }
+body:has(.inquiry-page) .section-heading { display: block; margin-bottom: 14px; }
+body:has(.inquiry-page) .section-heading h1 { margin: 0 0 5px; font: 700 1.4rem 'DM Sans', Arial, sans-serif; }
+body:has(.inquiry-page) .section-heading p { margin: 0; font-size: .9rem; }
+body:has(.inquiry-page) .subnav { gap: 24px; margin-bottom: 18px; }
+body:has(.inquiry-page) .form-card.framed { width: min(100%, 820px); margin: 0 auto; padding: 26px; background: var(--white); border: 1px solid var(--line); border-radius: 6px; }
+body:has(.inquiry-page) .form-card form { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; }
+body:has(.inquiry-page) .form-card form > label,
+body:has(.inquiry-page) .form-card form > .form-grid,
+body:has(.inquiry-page) .form-card form > button,
+body:has(.inquiry-page) .form-card form > .alert { grid-column: 1 / -1; }
+body:has(.inquiry-page) .form-card form > .form-grid { grid-column: 1 / -1; }
+body:has(.inquiry-page) .form-card label { min-width: 0; font-size: .82rem; font-weight: 600; }
+body:has(.inquiry-page) .form-card input,
+body:has(.inquiry-page) .form-card select,
+body:has(.inquiry-page) .form-card textarea { border-radius: 4px; }
+body:has(.inquiry-page) .form-card input,
+body:has(.inquiry-page) .form-card select { height: 44px; min-width: 0; padding: 10px 12px; }
+body:has(.inquiry-page) .form-card textarea { min-height: 152px; padding: 10px 12px; }
+body:has(.inquiry-page) .form-card .button { padding: 9px 14px; }
+
+@media (max-width: 600px) {
+  body:has(.inquiry-page) .form-card.framed { padding: 18px; }
+  body:has(.inquiry-page) .form-card form { grid-template-columns: 1fr; }
+  body:has(.inquiry-page) .form-card form > label,
+  body:has(.inquiry-page) .form-card form > .form-grid,
+  body:has(.inquiry-page) .form-card form > button { grid-column: 1; }
+}

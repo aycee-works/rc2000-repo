@@ -1,0 +1,19 @@
+/* Contact page */
+body:has(.contact-page) .contact-page { min-height: calc(100vh - 56px); padding: clamp(28px, 4vw, 44px) clamp(20px, 4vw, 44px); }
+body:has(.contact-page) .section-heading { margin-bottom: 18px; }
+body:has(.contact-page) .section-heading h1 { font: 700 1.4rem 'DM Sans', Arial, sans-serif; margin-bottom: 4px; }
+body:has(.contact-page) .section-heading p { margin: 0; font-size: .9rem; }
+body:has(.contact-page) .contact-grid { grid-template-columns: minmax(280px, .95fr) minmax(320px, 1.05fr); gap: 18px; }
+body:has(.contact-page) .form-card { padding: 18px; }
+body:has(.contact-page) .visit-card { padding: 18px; display: grid; grid-template-columns: 1fr 1fr; align-content: start; gap: 10px; border-radius: 0; }
+body:has(.contact-page) .visit-card .map-embed { grid-column: 1 / -1; grid-row: 1; margin: -18px -18px 8px; border-radius: 0; }
+body:has(.contact-page) .visit-card .map-embed iframe { height: 250px; }
+body:has(.contact-page) .visit-card .button { grid-column: 1 / -1; justify-self: start; }
+body:has(.contact-page) .contact-grid .form-card { border-radius: 0; }
+body:has(.contact-page) .visit-card .contact-detail { grid-column: 1 / -1; display: flex; align-items: center; gap: 10px; min-height: 36px; margin: 0; color: var(--ink); }
+body:has(.contact-page) .visit-card .contact-detail img { display: block; flex: 0 0 24px; width: 24px; height: 24px; object-fit: contain; }
+body:has(.contact-page) .visit-card .contact-detail a { color: inherit; }
+
+@media (max-width: 720px) {
+  body:has(.contact-page) .contact-grid { grid-template-columns: 1fr; }
+}

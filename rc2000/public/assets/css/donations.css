@@ -1,0 +1,35 @@
+/* assets/css/donations.css - Manage donations page (book + monetary tabs) */
+
+/* ---------- Tabs ---------- */
+.tabs { display: flex; gap: 8px; margin-bottom: 16px; }
+.tab {
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-navy);
+    background: #f4efdf;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+}
+.tab:hover { text-decoration: none; background: #efe8d2; }
+.tab.is-active { background: var(--color-ink); color: var(--color-white); border-color: var(--color-ink); }
+
+/* ---------- Book donations table (scoped; does not affect other .data-table uses) ---------- */
+.book-donations-table { table-layout: fixed; min-width: 760px; }
+.book-donations-table th, .book-donations-table td { vertical-align: top; }
+.book-donations-table .col-donor       { width: 18%; }
+.book-donations-table .col-contact     { width: 22%; overflow-wrap: anywhere; }
+.book-donations-table .col-qty         { width: 9%;  text-align: center; }
+.book-donations-table .col-condition   { width: 12%; }
+.book-donations-table .col-description { width: 29%; }
+.book-donations-table .col-action      { width: 10%; text-align: center; white-space: nowrap; }
+.book-donations-table .donor-name      { font-weight: 600; }
+.book-donations-table .col-qty         { font-variant-numeric: tabular-nums; }
+.book-donations-table .description-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    overflow-wrap: anywhere;
+    white-space: pre-line;
+}

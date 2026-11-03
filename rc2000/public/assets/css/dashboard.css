@@ -1,0 +1,27 @@
+/* assets/css/dashboard.css - dashboard page only */
+
+/* Welcome message under the page title */
+.dashboard-welcome {
+    margin: 6px 0 4px;
+    font: 500 clamp(24px, 2.4vw, 32px)/1.2 var(--font-heading);
+    color: var(--color-navy);
+}
+
+.dashboard-lists {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    align-items: start;
+}
+.dashboard-lists .panel { margin-bottom: 0; }
+.cell-truncate {
+    max-width: 170px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.stat-card.is-refreshing .stat-value { opacity: .5; }
+
+@media (max-width: 1100px) {
+    .dashboard-lists { grid-template-columns: 1fr; }
+}

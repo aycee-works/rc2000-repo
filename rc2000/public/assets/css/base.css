@@ -1,0 +1,112 @@
+/* assets/css/base.css - design tokens, reset, typography, buttons, form fields.
+   Colors are sampled from the Figma screenshots; adjust the variables here
+   if the exact Figma hex values differ. */
+
+:root {
+    --color-navy:        #17375e;   /* headings, table text */
+    --color-ink:         #252a34;   /* dark buttons, active nav, login panel */
+    --color-cream:       #f8f4e8;   /* page background */
+    --color-white:       #ffffff;
+    --color-border:      #d9dde3;
+    --color-muted:       #6b7a8c;   /* secondary text */
+    --color-maroon:      #7a0019;   /* links, primary content buttons */
+    --color-maroon-dark: #5f0013;
+    --color-green:       #5b7b58;   /* verify / resolve */
+    --color-red:         #c4202e;   /* mark not verified / close */
+    --color-row-hover:   #fbf7ec;
+
+    --badge-pending-bg:  #fde9cc;  --badge-pending-fg:  #b9803a;
+    --badge-good-bg:     #cfdccb;  --badge-good-fg:     #4a6a48;
+    --badge-bad-bg:      #e8bfc3;  --badge-bad-fg:      #8a2a35;
+    --badge-neutral-bg:  #b9c5cf;  --badge-neutral-fg:  #34485b;
+
+    --font-heading: 'Fraunces', Georgia, serif;
+    --font-body:    'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+    --radius: 6px;
+    --radius-lg: 10px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.45;
+    color: var(--color-navy);
+    background: var(--color-cream);
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: 500;
+    color: var(--color-navy);
+    margin: 0;
+}
+
+p { margin: 0 0 .6em; }
+a { color: var(--color-maroon); text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; }
+.muted { color: var(--color-muted); }
+[hidden] { display: none !important; }
+
+/* ---------- Buttons ---------- */
+.btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+    padding: 9px 18px;
+    font: 500 13px/1.2 var(--font-body);
+    border: 1px solid transparent;
+    border-radius: var(--radius);
+    cursor: pointer;
+    color: var(--color-white);
+    text-decoration: none;
+    transition: background-color .15s, opacity .15s;
+}
+.btn:hover { text-decoration: none; }
+.btn:disabled, .btn.is-loading { opacity: .6; cursor: not-allowed; }
+.btn-dark   { background: var(--color-ink); }
+.btn-dark:hover   { background: #151922; }
+.btn-maroon { background: var(--color-maroon); }
+.btn-maroon:hover { background: var(--color-maroon-dark); }
+.btn-green  { background: var(--color-green); }
+.btn-green:hover  { background: #496347; }
+.btn-red    { background: var(--color-red); }
+.btn-red:hover    { background: #a01a26; }
+.btn-light  { background: var(--color-white); color: var(--color-navy); border-color: var(--color-border); }
+.btn-block  { display: flex; width: 100%; }
+
+.link-button {
+    background: none; border: 0; padding: 0; cursor: pointer;
+    font: inherit; color: inherit;
+}
+.link-button:hover { text-decoration: underline; }
+
+/* ---------- Form fields ---------- */
+.field-label {
+    display: block;
+    margin: 0 0 6px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: var(--color-navy);
+}
+.input, .select, .textarea {
+    width: 100%;
+    padding: 9px 12px;
+    font: 400 13px var(--font-body);
+    color: var(--color-navy);
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+}
+.input::placeholder, .textarea::placeholder { color: #9aa5b1; }
+.input:focus, .select:focus, .textarea:focus {
+    outline: 2px solid rgba(23, 55, 94, .25);
+    border-color: var(--color-navy);
+}
+.textarea { min-height: 80px; resize: vertical; }

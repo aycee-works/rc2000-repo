@@ -1,0 +1,32 @@
+/* assets/css/inquiries.css - Manage inquiries page (shared .filter-bar and .review-* styles are in components.css) */
+
+.cell-truncate {
+    max-width: 190px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.field-wide { grid-column: 1 / -1; }
+.textarea-compact { min-height: 38px; height: 38px; }
+.textarea:disabled { background: #f1f1f1; cursor: not-allowed; }
+
+.inquiry-message {
+    margin: 10px 0 14px;
+    padding: 10px 12px;
+    font-size: 12px;
+    background: var(--color-cream);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+}
+
+.response-heading { margin: 4px 0 6px; font: 600 12px var(--font-body); color: var(--color-navy); }
+.response-list { margin: 0 0 8px; padding: 0; list-style: none; display: grid; gap: 8px; }
+.response-item {
+    padding: 8px 10px;
+    font-size: 12px;
+    background: #eef3f8;
+    border-left: 3px solid var(--color-navy);
+    border-radius: var(--radius);
+}
+.response-meta { margin-top: 4px; font-size: 11px; color: var(--color-muted); }

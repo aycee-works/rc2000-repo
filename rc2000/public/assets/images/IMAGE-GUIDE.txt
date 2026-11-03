@@ -1,0 +1,21 @@
+Reading Club 2000 website images
+
+Homepage image paths are configured near the top of public/home.php in $homeImages.
+Put your files in these folders, or change the matching filename in that array:
+
+  home_banner.jpg
+  stories/story-reading.jpg
+  stories/story-bookshelf.jpg
+  stories/story-sharing.jpg
+  stories/story-community.jpg
+  articles/article-reading.jpg
+  articles/article-sharing.jpg
+  articles/article-community.jpg
+
+Founder portrait (optional):
+  circlephoto.jpg
+  Its filename is configured near the top of public/about.php in $founderImage.
+
+Use JPG, PNG, or WebP and keep the filename and extension in the PHP setting in sync.
+The pages show designed color placeholders when an optional image is not present.
+The logo used in the navigation and footer is public/assets/images/logo.png.
